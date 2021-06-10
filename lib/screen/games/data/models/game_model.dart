@@ -9,22 +9,22 @@ part 'game_model.g.dart';
 class GameModel extends Game {
   GameModel(
       {required int id,
-      required int result_home,
-      required int result_away,
-      required TeamModel home_team,
-      required TeamModel away_team,
+      required int resultHome,
+      required int resultAway,
+      required TeamModel homeTeam,
+      required TeamModel awayTeam,
       required BookingModel booking,
-      required int play_status_id,
-      required int official_status_id})
+      required int playStatusId,
+      required int officialStatusId})
       : super(
             id: id,
-            result_home: result_home,
-            result_away: result_away,
-            home_team: home_team,
-            away_team: away_team,
+            resultHome: resultHome,
+            resultAway: resultAway,
+            homeTeam: homeTeam,
+            awayTeam: awayTeam,
             booking: booking,
-            play_status_id: play_status_id,
-            official_status_id: official_status_id);
+            playStatusId: playStatusId,
+            officialStatusId: officialStatusId);
 
   factory GameModel.fromJson(Map<String, dynamic> json) => _$GameModelFromJson(json);
 

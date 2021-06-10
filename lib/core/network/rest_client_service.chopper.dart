@@ -91,4 +91,29 @@ class _$RestClientService extends RestClientService {
     // client.send($request);
     return await client.send<dynamic,dynamic>($request);
   }
+
+  @override
+  Future<Response> getLeagueTeamPlayers(int teamId, int leagueId) async {
+    // TODO: implement getTeams
+
+    final $url = 'https://cap10.app/api/$GET_PLAYERS_TEAM_LEAGUE';
+    final $headers = {'Content-type': 'application/json'};
+
+    final $parameter = Map<String, dynamic>();
+
+    $parameter['league_id'] = leagueId;
+    $parameter['team_id'] = teamId;
+
+    // print("RestClientService: getteams response: 1: $jsonParam" + );
+
+    // final Map<String, int> $parameter = jsonDecode(jsonParam);
+    print($parameter);
+
+    final $request = Request('GET', $url, client.baseUrl,parameters: $parameter,headers: $headers);
+    print("request: " + $request.parameters.toString());
+
+    // client.send($request);
+    return await client.send<dynamic,dynamic>($request);
+  }
+
 }

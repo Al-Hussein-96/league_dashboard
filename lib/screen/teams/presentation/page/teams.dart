@@ -37,7 +37,7 @@ class _TeamsPageState extends State<TeamsPage> {
 
   Widget getRow(int i, Team team) {
     final FlutterLogo noImage = FlutterLogo();
-    final imageUrl = 'https://cap10.app/${team.image_url}';
+    final imageUrl = 'https://cap10.app/${team.imageUrl}';
     return Card(
       child: ListTile(
         leading: noImage,
@@ -88,10 +88,11 @@ class _TeamsPageState extends State<TeamsPage> {
           }
           print("stateBuilder: " + state.toString());
           return const Center(
-              child: CircularProgressIndicator(
-            strokeWidth: 2,
-            backgroundColor: CustomColor.green,
-          ));
+            child: CircularProgressIndicator(
+              strokeWidth: 2,
+              backgroundColor: CustomColor.green,
+            ),
+          );
         },
       ),
     );
@@ -101,7 +102,6 @@ class _TeamsPageState extends State<TeamsPage> {
     // monitor network fetch
     await Future.delayed(Duration(milliseconds: 1000));
     // if failed,use refreshFailed()
-
 
     _refreshController.refreshCompleted();
   }

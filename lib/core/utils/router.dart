@@ -18,7 +18,7 @@ class MyRouter {
       case TEAMS_ROUTE:
         return MaterialPageRoute(builder: (_) => GamesPage());
       case TEST_ROUTE:
-        return MaterialPageRoute(builder: (_) => TestPage());
+        return MaterialPageRoute(builder: (_) => Counter());
       // case CHANGE_PASSWORD_ROUTE:
       //   return MaterialPageRoute(builder: (_) => ChangePasswordPage());
       default:

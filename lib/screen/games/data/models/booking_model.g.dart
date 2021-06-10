@@ -7,12 +7,13 @@ part of 'booking_model.dart';
 // **************************************************************************
 
 BookingModel _$BookingModelFromJson(Map<String, dynamic> json) {
-  print("BookingModelFromJson");
   return BookingModel(
     id: json['id'] as int,
     bookingStatusId: json['booking_status_id'] as int,
-    periodFree: PeriodFreeModel.fromJson(json['period_free'] as Map<String, dynamic>),
-    bookingStatus: StatusModel.fromJson(json['booking_status'] as Map<String, dynamic>),
+    periodFree:
+        PeriodFreeModel.fromJson(json['period_free'] as Map<String, dynamic>),
+    bookingStatus:
+        StatusModel.fromJson(json['booking_status'] as Map<String, dynamic>),
   );
 }
 

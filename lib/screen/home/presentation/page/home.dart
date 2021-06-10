@@ -90,6 +90,10 @@ class GridOptions extends StatelessWidget {
             Navigator.push(context,
                 new MaterialPageRoute(builder: (context) => new GamesPage()));
             break;
+          case 4:
+            Navigator.push(context,
+                new MaterialPageRoute(builder: (context) => new GamesPage()));
+            break;
         }
 
       },

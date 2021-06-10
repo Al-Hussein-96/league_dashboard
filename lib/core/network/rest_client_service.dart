@@ -26,4 +26,8 @@ abstract class RestClientService extends ChopperService {
 
   @Get(path: GET_GAMES,headers: {'Content-type': 'application/json'})
   Future<Response> getGames(@Query() int jsonParam);
+
+  @Get(path: GET_PLAYERS_TEAM_LEAGUE,headers: {'Content-type': 'application/json'})
+  Future<Response>  getLeagueTeamPlayers(@Query('team_id') int teamId,@Query('league_id') int leagueId);
+
 }

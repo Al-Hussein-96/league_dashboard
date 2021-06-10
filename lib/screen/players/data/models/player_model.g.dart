@@ -1,21 +1,22 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'team_model.dart';
+part of 'player_model.dart';
 
 // **************************************************************************
 // JsonSerializableGenerator
 // **************************************************************************
 
-TeamModel _$TeamModelFromJson(Map<String, dynamic> json) {
-  return TeamModel(
+PlayerModel _$PlayerModelFromJson(Map<String, dynamic> json) {
+  return PlayerModel(
     id: json['id'] as int,
     name: json['name'] as String,
-    imageUrl: json['image_url'] as String,
+    lastName: json['last_name'] as String,
   );
 }
 
-Map<String, dynamic> _$TeamModelToJson(TeamModel instance) => <String, dynamic>{
+Map<String, dynamic> _$PlayerModelToJson(PlayerModel instance) =>
+    <String, dynamic>{
       'id': instance.id,
       'name': instance.name,
-      'image_url': instance.imageUrl,
+      'last_name': instance.lastName,
     };
