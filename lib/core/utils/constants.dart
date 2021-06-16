@@ -20,5 +20,7 @@ const double DEFAULT_PAGE_PADDING = 20;
 const String HOME_ROUTE = '/';
 const String LOGIN_ROUTE = '/login';
 const String TEAMS_ROUTE = '/teams';
+const String GAMES_ROUTE = '/games';
+const String PLAYERS_ROUTE = '/players';
 const String CHANGE_PASSWORD_ROUTE = '/change_password';
 const String TEST_ROUTE = '/test';

@@ -13,11 +13,17 @@ import 'package:league_dashboard/screen/login/domain/repositories/login_reposito
 import 'package:league_dashboard/screen/login/domain/usecases/login_user.dart';
 import 'package:league_dashboard/screen/login/presentation/blocs/user_login/user_login_bloc.dart';
 import 'package:league_dashboard/screen/login/presentation/blocs/user_login/user_login_event.dart';
-import 'package:league_dashboard/screen/teams/data/datasource/team_remote_datasource.dart';
-import 'package:league_dashboard/screen/teams/data/repositories/login_repository_impl.dart';
-import 'package:league_dashboard/screen/teams/domain/repositories/team_repository.dart';
-import 'package:league_dashboard/screen/teams/domain/usecases/get_teams.dart';
-import 'package:league_dashboard/screen/teams/presentation/blocs/teams/bloc.dart';
+import 'package:league_dashboard/screen/players_teams/data/data_sources/players_remote_datasource.dart';
+import 'package:league_dashboard/screen/players_teams/data/data_sources/team_remote_datasource.dart';
+import 'package:league_dashboard/screen/players_teams/data/repositories/login_repository_impl.dart';
+import 'package:league_dashboard/screen/players_teams/data/repositories/player_repoistory_impl.dart';
+import 'package:league_dashboard/screen/players_teams/domain/repositories/player_repository.dart';
+import 'package:league_dashboard/screen/players_teams/domain/repositories/team_repository.dart';
+import 'package:league_dashboard/screen/players_teams/domain/use_cases/get_players.dart';
+import 'package:league_dashboard/screen/players_teams/domain/use_cases/get_teams.dart';
+import 'package:league_dashboard/screen/players_teams/presentation/bloc_players/bloc.dart';
+import 'package:league_dashboard/screen/players_teams/presentation/bloc_teams/teams_bloc.dart';
+import 'package:league_dashboard/screen/players_teams/presentation/bloc_teams/teams_event.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 import 'core/network/network_info.dart';
@@ -40,6 +46,11 @@ Future<void> init() async {
         () => TeamsBloc(
       getTeams: sl(),
     )..add(TeamsLoadedEvent(4)),
+  );
+  sl.registerFactory(
+        () => PlayersBloc(
+       getPlayers: sl(),
+    ),
   );
   sl.registerFactory(
         () => GamesBloc(
@@ -68,6 +79,7 @@ Future<void> init() async {
   sl.registerLazySingleton(() => GetListTeams(repository: sl()));
   sl.registerLazySingleton(() => GetTeams(repository: sl()));
   sl.registerLazySingleton(() => GetGames(repository: sl()));
+  sl.registerLazySingleton(() => GetPlayers(repository: sl()));
 
   //Repositories
   sl.registerLazySingleton<LoginRepository>(
@@ -79,6 +91,12 @@ Future<void> init() async {
   );
   sl.registerLazySingleton<TeamRepository>(
         () => TeamRepositoryImpl(
+      networkInfo: sl(),
+      remoteDataSource: sl(),
+    ),
+  );
+  sl.registerLazySingleton<PlayerRepository>(
+        () => PlayerRepositoryImpl(
       networkInfo: sl(),
       remoteDataSource: sl(),
     ),
@@ -114,6 +132,11 @@ Future<void> init() async {
   );
   sl.registerLazySingleton<TeamRemoteDataSource>(
         () => TeamRemoteDataSourceImpl(
+      restClientService: sl(),
+    ),
+  );
+  sl.registerLazySingleton<PlayerRemoteDataSource>(
+        () => PlayerRemoteDataSourceImpl(
       restClientService: sl(),
     ),
   );

@@ -21,7 +21,7 @@ class SampleApp extends StatelessWidget {
       title: 'League Dashboard',
       // theme: CustomTheme.mainTheme,
       onGenerateRoute: MyRouter.generateRoute,
-      initialRoute: LOGIN_ROUTE,
+      initialRoute: PLAYERS_ROUTE,
     );
   }
 }

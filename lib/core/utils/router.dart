@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:league_dashboard/screen/games/presentation/page/games.dart';
 import 'package:league_dashboard/screen/home/presentation/page/home.dart';
 import 'package:league_dashboard/screen/login/presentation/page/login.dart';
-import 'package:league_dashboard/screen/teams/presentation/page/teams.dart';
+import 'package:league_dashboard/screen/players_teams/presentation/pages/teams.dart';
+import 'package:league_dashboard/screen/players_teams/presentation/pages/teams_player.dart';
 import 'package:league_dashboard/test.dart';
 import 'constants.dart';
 
@@ -15,8 +16,10 @@ class MyRouter {
         return MaterialPageRoute(builder: (_) => HomePage());
       case TEAMS_ROUTE:
         return MaterialPageRoute(builder: (_) => TeamsPage());
-      case TEAMS_ROUTE:
+      case GAMES_ROUTE:
         return MaterialPageRoute(builder: (_) => GamesPage());
+      case PLAYERS_ROUTE:
+        return MaterialPageRoute(builder: (_) => TeamsPlayerPage());
       case TEST_ROUTE:
         return MaterialPageRoute(builder: (_) => Counter());
       // case CHANGE_PASSWORD_ROUTE:

@@ -10,7 +10,8 @@ import 'package:league_dashboard/screen/games/presentation/page/games.dart';
 import 'package:league_dashboard/screen/login/presentation/blocs/user_login/user_login_bloc.dart';
 import 'package:league_dashboard/screen/login/presentation/blocs/user_login/user_login_event.dart';
 import 'package:league_dashboard/screen/login/presentation/blocs/user_login/user_login_state.dart';
-import 'package:league_dashboard/screen/teams/presentation/page/teams.dart';
+import 'package:league_dashboard/screen/players_teams/presentation/pages/teams.dart';
+import 'package:league_dashboard/screen/players_teams/presentation/pages/teams_player.dart';
 
 import '../../../../injection_container.dart';
 
@@ -92,7 +93,7 @@ class GridOptions extends StatelessWidget {
             break;
           case 4:
             Navigator.push(context,
-                new MaterialPageRoute(builder: (context) => new GamesPage()));
+                new MaterialPageRoute(builder: (context) => new TeamsPlayerPage()));
             break;
         }
 

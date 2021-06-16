@@ -6,9 +6,9 @@ import 'package:league_dashboard/core/error/failures.dart';
 import 'package:league_dashboard/core/usecases/usecase.dart';
 import 'package:league_dashboard/screen/games/domain/entities/game.dart';
 import 'package:league_dashboard/screen/games/domain/repositories/game_repository.dart';
-import 'package:league_dashboard/screen/teams/domain/entities/team.dart';
-import 'package:league_dashboard/screen/teams/domain/repositories/team_repository.dart';
-import 'package:league_dashboard/screen/teams/domain/usecases/get_teams.dart';
+import 'package:league_dashboard/screen/players_teams/domain/entities/team.dart';
+import 'package:league_dashboard/screen/players_teams/domain/repositories/team_repository.dart';
+import 'package:league_dashboard/screen/players_teams/domain/use_cases/get_teams.dart';
 
 class GetListTeams implements UseCase<List<Game>,TeamsParams>{
   final GameRepository repository;

@@ -6,7 +6,7 @@ import 'package:league_dashboard/core/network/network_info.dart';
 import 'package:league_dashboard/screen/games/data/datasource/game_remote_datasource.dart';
 import 'package:league_dashboard/screen/games/domain/entities/game.dart';
 import 'package:league_dashboard/screen/games/domain/repositories/game_repository.dart';
-import 'package:league_dashboard/screen/teams/data/datasource/team_remote_datasource.dart';
+import 'package:league_dashboard/screen/players_teams/data/data_sources/team_remote_datasource.dart';
 
 class GameRepositoryImpl implements GameRepository {
   final GameRemoteDataSource remoteDataSource;
