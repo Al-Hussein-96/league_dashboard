@@ -1,5 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
-import 'package:league_dashboard/screen/players/domain/entities/player.dart';
+
+import '../../domain/entities/player.dart';
 
 part 'player_model.g.dart';
 

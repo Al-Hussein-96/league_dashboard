@@ -1,10 +1,10 @@
 const String CACHED_TOKEN = 'CACHED_TOKEN';
 
-const String API_BASE_URL = 'https://cap10.app/api/'; // add the base url here
-const String LOGIN_USER = 'game_details/login';
-const String GET_TEAMS = 'league/get_teams';
-const String GET_GAMES = 'official_game/get_games';
-const String GET_PLAYERS_TEAM_LEAGUE = 'league/get_players_statistics';
+const String API_BASE_URL = '***'; // add the base url here
+const String LOGIN_USER = '***';
+const String GET_TEAMS = '***';
+const String GET_GAMES = '***';
+const String GET_PLAYERS_TEAM_LEAGUE = '***';
 const String CREATE_USER = 'create';
 
 const String LOGGING_ERROR = 'Could not login successfully, please check your email and password';
